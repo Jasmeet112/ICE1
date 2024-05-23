@@ -60,6 +60,20 @@ public class CardTrick {
         Card luckyCard = new Card();
         luckyCard.setValue(12); 
         luckyCard.setSuit("Hearts"); 
+        
+        boolean luckyFound = false;
+        for (Card card : magicHand) {
+            if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) {
+            luckyFound = true;
+            break;
+            }
+        }
+
+        if (luckyFound) {
+            System.out.println("The lucky card (" + luckyCard.getSuit() + " " + luckyCard.getValue() + ") is in the magic hand!");
+        } else {
+            System.out.println("The lucky card (" + luckyCard.getSuit() + " " + luckyCard.getValue() + ") is not in the magic hand.");
+        }
     }
     
 }
